@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <title><?php echo $title; ?> | Whitney Davis - Understanding Portfolio</title>
+    <title>Understanding Portfolio | Whitney Davis - Understanding Portfolio</title>
     <link href="css/mainStyleSheet.css" type="text/css" rel="stylesheet" media="screen">
     <meta name="viewport" content="initial-scale=1">
     <script type="text/javascript" src="js/validation.js"></script>
@@ -18,13 +18,13 @@
         
         <nav class="side_menu">
     		<ul>
-                <li><a href="?action=javascript_objects">JavaScript Objects</a></li>
-                <li><a href="?action=dom_manipulation">DOM Manipulation</a></li>
-                <li><a href="?action=css3_transitions">CSS3 Transitions</a></li>
-                <li><a href="?action=css3_animations">CSS3 Animations</a></li>
-                <li><a href="?action=local_storage">Local Storage</a></li> 
-                <li><a href="?action=ajax">AJAX</a></li>
-                <li><a href="?action=json_data_serialization">JSON Data Serialization</a></li>        
+                <li><a href="/javascript_objects.php">JavaScript Objects</a></li>
+                <li><a href="/dom_manipulation.php">DOM Manipulation</a></li>
+                <li><a href="/css3_transitions.php">CSS3 Transitions</a></li>
+                <li><a href="/css3_animations.php">CSS3 Animations</a></li>
+                <li><a href="/local_storage.php">Local Storage</a></li> 
+                <li><a href="/ajax.php">AJAX</a></li>
+                <li><a href="/json_data_serialization.phps">JSON Data Serialization</a></li>        
             </ul>
     	</nav>
 </header>
