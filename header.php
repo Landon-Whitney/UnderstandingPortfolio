@@ -24,7 +24,7 @@
                 <li><a href="/css3_animations.php">CSS3 Animations</a></li>
                 <li><a href="/local_storage.php">Local Storage</a></li> 
                 <li><a href="/ajax.php">AJAX</a></li>
-                <li><a href="/json_data_serialization.phps">JSON Data Serialization</a></li>        
+                <li><a href="/json_data_serialization.php">JSON Data Serialization</a></li>        
             </ul>
     	</nav>
 </header>

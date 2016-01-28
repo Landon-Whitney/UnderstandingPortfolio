@@ -67,4 +67,5 @@
 	
 	<button onclick="document.getElementById("my_demo").innerHTML = car_statement">Try it</button>
 	<p id="my_demo"></p>
+	
 <?php include '/footer.php'; ?>
