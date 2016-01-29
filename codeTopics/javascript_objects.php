@@ -1,4 +1,5 @@
-<?php include '/header.php'; ?>
+<?php include '../header.php'; ?>
+
 
 <script>
 	var person = {
@@ -11,14 +12,14 @@
 	var person_statement = person["firstname"] + " is " + person["age"] + " years old.";
 	
 	function car(make, model, year, odometer) {
-		this.make = “make”;
-		this.model = “model”;
-		this.year = “year”;
-		this.odometerReading = “odometer”;
+		this.make = "make";
+		this.model = "model";
+		this.year = "year";
+		this.odometerReading = "odometer";
 	}
 
-	var carters_car = new car(“toyota”, “prius”, 2012, 55000);
-	var kips_car = new car(“subaru”, “outback”, 2015, 12000);
+	var carters_car = new car("toyota", "prius", 2012, 55000);
+	var kips_car = new car("subaru", "outback", 2015, 12000);
 	
 	var car_statement = carters_car.make + carters_car.model + " has " + carters_car.odometerReading + " miles on it."
 
@@ -43,29 +44,30 @@
 	</code></pre>
 	</p>
 	
+	<p id="w3schools_demo"></p>
 	<button onclick="document.getElementById("w3schools_demo").innerHTML =
 	person_statement">Try it</button>
-	<p id="w3schools_demo"></p>
 
 <h4>My own code:</h4>
 	<p>
 	<pre><code>
 	function car(make, model, year, odometer) {
-		this.make = “make”;
-		this.model = “model”;
-		this.year = “year”;
-		this.odometerReading = “odometer”;
+		this.make = "make";
+		this.model = "model";
+		this.year = "year";
+		this.odometerReading = "odometer";
 	}
 
-	var carters_car = new car(“toyota”, “prius”, 2012, 55000);
-	var kips_car = new car(“subaru”, “outback”, 2015, 12000);
+	var carters_car = new car("toyota", "prius", 2012, 55000);
+	var kips_car = new car("subaru", "outback", 2015, 12000);
 
 	document.getElementById("demo").innerHTML =
 	carters_car.make + carters_car.model + " has " + carters_car.odometerReading + " miles on it.";
 	</code></pre>
 	</p>
 	
+	<p id="my_demo"></p>
 	<button onclick="document.getElementById("my_demo").innerHTML = car_statement">Try it</button>
 	<p id="my_demo"></p>
 	
-<?php include '/footer.php'; ?>
+<?php include '../footer.php'; ?>

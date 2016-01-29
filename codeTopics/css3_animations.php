@@ -1,4 +1,4 @@
-<?php include '/header.php'; ?>
+<?php include '../header.php'; ?>
 
 <script>
 
@@ -26,4 +26,4 @@
 	<button onclick="">Try it</button>
 	<p id="my_demo"></p>
 	
-<?php include '/footer.php'; ?>
+<?php include '../footer.php'; ?>
