@@ -54,7 +54,7 @@
 
 </script>
 
-<main>
+
 <h3>JavaScript Objects</h3>
 
 <h4>From w3schools:</h4>
@@ -135,5 +135,5 @@
 	<p>Keep selecting this button to loop through an array of objects:</p>
 	<p id="my_demo2"></p>
 	<button onclick="document.getElementById('my_demo2').innerHTML = displayCar()">Try it</button>
-</main>
+
 <?php include '../footer.php'; ?>

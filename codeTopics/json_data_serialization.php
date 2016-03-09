@@ -67,8 +67,37 @@
                 	
 		document.getElementById("car_entry").innerHTML = car_object_txt;
 	}
+	
+	//example 2
+	var cars = [{make:"Toyota", model:"Prius", color:"silver":},
+		{make:"Subaru", model:"Outback", color:"green":},
+		{make:"Volkswagon", model:"Beetle", color:"red":},
+		{make:"Fiat", model:"500", color:"white":},
+		{make:"Toyota", model:"Camry", color:"maroon":},
+		{make:"Subaru", model:"Outback", color:"green":},
+		{make:"Hyundai", model:"Elantra", color:"blue":}
+	];
+	var cars_unselected = cars;
+	
+	function randomSelection (){
+		var length = cars_unselected.length;
+		
+		if (length === 0) {
+			cars_unselected = cars;
+			length = cars_unselected.length;
+		}
+		
+		var i = Math.floor(Math.random() * length);
+		var car = cars_unselected[i];
+		for (key in car) {
+			
+		}
+		
+		document.getElementById("car_display").innerHTML = output;
+		cars_unselected.splice(i, 1);
+		
+	}
 </script>
-<main>
 <article>
 <h3>JSON Data Serialization</h3>
 
@@ -177,7 +206,52 @@
 	</code></pre>
 	</p>
 </article>	
-</main>	
+
+<article>
+<h4>My own code:</h4>
+<h5>Example 2</h5>
+	<p>
+	<pre><code>
+	var cars = [{make:"Toyota", model:"Prius", color:"silver":},
+		{make:"Subaru", model:"Outback", color:"green":},
+		{make:"Volkswagon", model:"Beetle", color:"red":},
+		{make:"Fiat", model:"500", color:"white":},
+		{make:"Toyota", model:"Camry", color:"maroon":},
+		{make:"Subaru", model:"Outback", color:"green":},
+		{make:"Hyundai", model:"Elantra", color:"blue":}
+	];
+	var cars_unselected = cars;
+	
+	function randomSelection (){
+		var length = cars_unselected.length;
+		
+		if (length === 0) {
+			cars_unselected = cars;
+			length = cars_unselected.length;
+		}
+		
+		var i = Math.floor(Math.random() * length);
+		var car = cars_unselected[i];
+		for (key in car) {
+			
+		}
+		
+		document.getElementById("car_display").innerHTML = output;
+		cars_unselected.splice(i, 1);
+		
+	}
+
+	</code></pre>
+	</p>
+	
+
+	
+	<p>Select the button to randomly select a car.</p>
+	<button onclick="randomSelection()">Try me</button>
+	<p id="car_display">
+
+	</p>
+</article>
 
 	
 <?php include '../footer.php'; ?>

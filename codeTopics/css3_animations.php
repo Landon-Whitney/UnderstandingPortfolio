@@ -1,9 +1,5 @@
 <?php include '../header.php'; ?>
 
-<script>
-
-</script>
-<main>
 <h3>CSS3 Animations</h3>
 
 <h4>From w3schools:</h4>
@@ -76,5 +72,5 @@
 	</p>
 	
 	<button id="animated">Try it</button>
-</main>
+
 <?php include '../footer.php'; ?>

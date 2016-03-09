@@ -1,6 +1,6 @@
 <?php include '../header.php'; ?>
 
-<main>
+
 <h3>CSS3 Transitions</h3>
 
 <article>
@@ -51,6 +51,4 @@
 	<button onclick="">Try it</button>
 	<p id="my_demo"></p>
 </article>
-</main>
-
 <?php include '../footer.php'; ?>

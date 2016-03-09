@@ -2,27 +2,60 @@
 
 <script>
 
-	function addCarEntry() {
-		var carForm = document.forms["cars"];
+	var car;
+	var car_txt;
+	function makeCarObject() {
+       var carForm = document.forms["cars"];
 		
     	var name = carForm.elements["name"].value;
-    	var make = carForm["make"].value;
-    	var model = carForm["model"].value;
-    	var year = carForm["year"].value;
-    	var mileage = carForm["mileage"].value;
+    	var make = carForm.elements["make"].value;
+    	var model = carForm.elements["model"].value;
+    	var year = carForm.elements["year"].value;
+    	var mileage = parseInt(carForm.elements["mileage"].value);
     	
-    	var car = {
+    	
+    	car = {
     		carname: name,
     		carmake: make,
     		carmodel: model,
     		caryear: year,
     		carmileage:mileage 
     	};
-    	
-    	var text = car.carname + "&#39s " + year + " " + make + " " + model + " has " + mileage + " miles on it.";
-    	document.getElementById('car_entry').innerHTML = text;
+
+        return car;
 	}
 	
+	function addCarEntry() {
+    	var car = makeCarObject();
+    	
+    	if (typeof(Storage) !== "undefined") {
+    		if (localStorage.getItem("carLot") === null) {
+    			var carLot = {};
+    		}
+    		else {
+    			var JSON_carlot = localStorage.getItem("carLot");
+    			var carLot = JSON.parse(JSON_carlot);
+    		}
+    		var name = car.carname;
+    		carLot[name] = car;
+    		var JSON_carlot_revised = JSON.stringify(carLot);
+    		localStorage.setItem("carLot", JSON_carlot_revised);
+    	
+    		var car_text = "";
+    		for (var key in carLot) {
+    			car_text += carLot[key].carname + "&#39s " + carLot[key].caryear + " " + carLot[key].carmake + " " + carLot[key].carmodel + " has " + carLot[key].carmileage + " miles on it." + "</br>";
+    		}
+    		document.getElementById('car_entry').innerHTML = car_text;	
+    	}
+    	else {
+    		alert("No web storage support!");
+    	}
+    	
+	}
+	
+	
+	
+	//w3schools script
 	function myFunction() {
     	var x = document.forms["frm1"];
     	var text = "";
@@ -34,7 +67,7 @@
 	}
 	
 </script>
-<main>
+
 <h3>DOM Manipulation</h3>
 
 <h4>From w3schools:</h4>
@@ -51,16 +84,15 @@
 	}
 	</code></pre>
 	</p>
+	<p>Click "Try it" to display the value of each element in the form.</p>
 	
-	<form id="frm1" action="main.js">
+	<fieldset>
+	<form id="frm1">
   		First name: <input type="text" name="fname" value="Donald"><br>
   		Last name: <input type="text" name="lname" value="Duck"><br><br>
-  		<input type="submit" value="Submit">
+  		<button type="button" onclick="myFunction()">Try it</button>
 	</form> 
-
-	<p>Click "Try it" to display the value of each element in the form.</p>
-
-	<button onclick="myFunction()">Try it</button>
+	</fieldset>
 	
 	<p id="w3schools_demo"></p>
 
@@ -68,29 +100,59 @@
 	<p>
 	<pre><code>
 
-	function addCarEntry() {
-    	var name = document.getElementById('name');
-    	var make = document.getElementById('make');
-    	var model = document.getElementById('model');
-    	var year = document.getElementById('year');
-    	var mileage = document.getElementById('mileage');
+	function makeCarObject() {
+       var carForm = document.forms["cars"];
+		
+    	var name = carForm.elements["name"].value;
+    	var make = carForm.elements["make"].value;
+    	var model = carForm.elements["model"].value;
+    	var year = carForm.elements["year"].value;
+    	var mileage = parseInt(carForm.elements["mileage"].value);
     	
-    	var car = {
+    	
+    	car = {
     		carname: name,
     		carmake: make,
     		carmodel: model,
     		caryear: year,
     		carmileage:mileage 
     	};
+
+        return car;
+	}
+	
+	function addCarEntry() {
+    	var car = makeCarObject();
     	
-    	var text = car.carname + " owns a " + car.make + car.model + " made in 2012 with " + car.carmileage " miles on it.";
-    	document.getElementById("car_entry").innerHTML = text;
+    	if (typeof(Storage) !== "undefined") {
+    		if (localStorage.getItem("carLot") === null) {
+    			var carLot = {};
+    		}
+    		else {
+    			var JSON_carlot = localStorage.getItem("carLot");
+    			var carLot = JSON.parse(JSON_carlot);
+    		}
+    		var name = car.carname;
+    		carLot[name] = car;
+    		var JSON_carlot_revised = JSON.stringify(carLot);
+    		localStorage.setItem("carLot", JSON_carlot_revised);
+    	
+    		var car_text = "";
+    		for (var key in carLot) {
+    			car_text += carLot[key].carname + "&#39s " + carLot[key].caryear + " " + carLot[key].carmake + " " + carLot[key].carmodel + " has " + carLot[key].carmileage + " miles on it." + "</br>";
+    		}
+    		document.getElementById('car_entry').innerHTML = car_text;	
+    	}
+    	else {
+    		alert("No web storage support!");
+    	}
+    	
 	}
 
 	</code></pre>
 	</p>
 
-	
+	<p>Click "Try it" to display car information:</p>
 	<fieldset>
 	<legend>Car Information</legend>
 	<form id="cars">
@@ -103,16 +165,14 @@
 		<label>Year:</label> 
 			<input type="text" name="year" id="car_year" value="2012">
 		<label>Mileage:</label> 
-			<input type="text" name="mileage" id=car_mileage" value="58,412">
- 		<input type="submit" value="Submit">
+			<input type="text" name="mileage" id="car_mileage" value="58,412">
+ 		<button type="button" onclick="addCarEntry()">Try It</button>
 	</form> 
 	</fieldset>
 	
-	<p>Click "Try it" to display car information.</p>
 	
 	<p id="car_entry"></p>
 
-	<button onclick="addCarEntry()">Try It</button>
 
-	</main>
+
 <?php include '../footer.php'; ?>
